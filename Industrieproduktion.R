@@ -24,7 +24,7 @@ sub_all <- filter(sub, geo == "BE" | geo == "BG" | geo == "DK" | geo == "DE"
                  | geo == "HU" | geo == "CY" | geo =="UK")
 
 
-# Graph 3-Ländervergleich
+# Comparison of 3 neighbouring Countries
 
 sub_all %>% 
   filter(geo=="AT" |geo== "DE" | geo=="SI") %>% 
@@ -34,7 +34,8 @@ sub_all %>%
        x="Jahr", y="Produktionsindex")
 
 
-#EU alle Länder
+# Comparison of all EU-members + UK
+# Shading of date ranges for financial crash 2008-2009 and COVID-Pandemic
 
 sub_all %>% 
   ggplot(., aes(x=TIME_PERIOD, y=OBS_VALUE, color=geo))+
